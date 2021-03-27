@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Assignment 9</title>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+
+    <h1>Assignment 9: AJAX</h1>
+
+    <div class="write-comment">
+      <h2>Post a Comment</h2>
+
+      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+
+        <label>
+          Title:
+          <input type="text" id="title">
+        </label>
+
+        <label>
+          Enter a Comment:
+          <textarea id="body"></textarea>
+        </label>
+
+        <button type="submit" name="button">Post Comment</button>
+        
+        <div class='comments'>
+          <h2>Comments</h2>
+        </div>
+        
+      </form>
+    </div>
+    <script>
+      $(document).ready(function(){
+        /*Write your code here*/
+        
+      });
+    </script>
+  </body>
+</html>
