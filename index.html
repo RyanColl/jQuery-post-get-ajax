@@ -17,9 +17,20 @@
                     <div class='comment-text'><p>${user.body}</p></div>
             `)
           })
-        });
+        })
 
-
+        $('#f').submit((e) => {
+          e.preventDefault()
+          let url = 'https://jsonplaceholder.typicode.com/posts'
+          let title = $("#title").val()
+          let body = $('#body').val()
+          $.post(url, { title: title, body: body })
+          .done((data) => {
+            console.log(data)
+          }).fail(function() {
+            alert( "error" );
+          })
+        })
       })
     </script>
   </head>
@@ -30,7 +41,7 @@
     <div class="write-comment">
       <h2>Post a Comment</h2>
 
-      <form action="https://jsonplaceholder.typicode.com/posts" method="post">
+      <form id='f' action="https://jsonplaceholder.typicode.com/posts" method="post">
 
         <label>
           Title:
