@@ -5,6 +5,23 @@
     <title>Assignment 9</title>
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script>
+      $(document).ready(() => {
+        // get request
+        $.getJSON("https://jsonplaceholder.typicode.com/posts", (data) => {
+          $.each(data, (i, user) => {
+            $(".comments").append(`
+                  <div class='comment'>
+                    <div class='ID'>Post ID: ${user.id} </div>
+                    <div class='comment-text'><p>${user.body}</p></div>
+            `)
+          })
+        });
+
+
+      })
+    </script>
   </head>
   <body>
 
